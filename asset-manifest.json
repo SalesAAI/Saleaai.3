@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Saleaai.3/static/css/main.2ad0cc5b.css",
+    "main.js": "/Saleaai.3/static/js/main.ceb714a1.js",
+    "index.html": "/Saleaai.3/index.html",
+    "main.2ad0cc5b.css.map": "/Saleaai.3/static/css/main.2ad0cc5b.css.map",
+    "main.ceb714a1.js.map": "/Saleaai.3/static/js/main.ceb714a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ad0cc5b.css",
+    "static/js/main.ceb714a1.js"
+  ]
+}
