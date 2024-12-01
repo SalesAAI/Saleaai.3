@@ -1,264 +1,263 @@
-/* Practice Mode Container */
-.practice-mode-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px;
+/* Main Layout */
+.practice-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 1.25rem;
 }
 
-/* Component Transitions */
-.fade-enter {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
-}
-
-.fade-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-exit-active {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 300ms, transform 300ms;
-}
-
-/* Practice Mode Components */
-.practice-component {
-  background-color: #ffffff;
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0.875rem 1.25rem;
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.practice-component:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.header-buttons {
+  display: flex;
+  gap: 0.75rem;
 }
 
-/* Practice Scenario Cards */
-.scenario-beginner {
-  background-color: #4CAF50;  /* Solid green */
-  border-radius: 12px;
-  padding: 16px;
-  transition: all 0.3s ease;
-}
-
-.scenario-advance {
-  background-color: #f44336;  /* Solid red */
-  border-radius: 12px;
-  padding: 16px;
-  transition: all 0.3s ease;
-}
-
-.scenario-beginner:hover {
-  background-color: rgba(76, 175, 80, 0.3);  /* Translucent green */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.scenario-advance:hover {
-  background-color: rgba(244, 67, 54, 0.3);  /* Translucent red */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Control Buttons */
-.control-button {
-  min-width: 120px;
-  height: 48px;
-  border-radius: 24px;
-  font-weight: 500;
-  text-transform: none;
-  transition: all 0.3s ease;
-}
-
-.control-button:hover {
-  transform: translateY(-2px);
-}
-
-/* Status Indicators */
-.status-indicator {
+.header-button {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin: 8px 0;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.status-indicator.active {
-  background-color: #e8f5e9;
-  color: #2e7d32;
+.header-button.outline {
+  background: transparent;
+  border: 1px solid #3498db;
+  color: #3498db;
 }
 
-.status-indicator.inactive {
-  background-color: #f5f5f5;
-  color: #757575;
+.header-button.outline:hover {
+  background: rgba(52, 152, 219, 0.1);
 }
 
-/* Progress Animations */
-@keyframes progress {
-  0% {
-    width: 0;
-    opacity: 0.1;
-  }
-  100% {
-    width: 100%;
-    opacity: 1;
-  }
+.header-button.filled {
+  background: #3498db;
+  color: white;
 }
 
-.progress-bar {
-  height: 4px;
-  background-color: #e0e0e0;
-  border-radius: 2px;
+.header-button.filled:hover {
+  background: #2980b9;
+}
+
+/* Title */
+.practice-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.practice-header h1 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Categories */
+.categories-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category-section {
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
-.progress-bar-fill {
-  height: 100%;
-  background-color: #2196f3;
-  animation: progress 2s ease-out;
-}
-
-/* Voice Visualization */
-.voice-wave {
+.category-header {
+  padding: 0.875rem 1.25rem;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 16px;
+  justify-content: space-between;
 }
 
-.wave-bar {
-  width: 3px;
-  height: 100%;
-  margin: 0 2px;
-  background-color: #2196f3;
-  animation: wave 1s ease-in-out infinite;
-}
-
-@keyframes wave {
-  0%, 100% {
-    height: 20%;
-  }
-  50% {
-    height: 100%;
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-  .practice-mode-container {
-    padding: 16px;
-  }
-
-  .control-button {
-    min-width: 100px;
-    height: 40px;
-  }
-
-  .status-indicator {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-  }
-}
-
-/* Loading States */
-.loading-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.8);
+.category-title {
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #2196f3;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Error States */
-.error-message {
-  background-color: #ffebee;
-  color: #c62828;
-  padding: 12px 16px;
-  border-radius: 8px;
-  margin: 16px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Success States */
-.success-message {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  padding: 12px 16px;
-  border-radius: 8px;
-  margin: 16px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Tooltip Styles */
-.custom-tooltip {
-  background-color: #424242;
-  color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 4px;
+  gap: 0.75rem;
   font-size: 0.875rem;
-  max-width: 220px;
+  font-weight: 600;
+}
+
+.category-count {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Scenarios Grid */
+.scenarios-container {
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  background: #f8fafc;
+}
+
+/* Scenario Card */
+.scenario-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.scenario-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #3498db;
+}
+
+.scenario-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.scenario-description {
+  font-size: 0.8125rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.scenario-quote {
+  background: #f1f5f9;
+  border-left: 2px solid #3498db;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.8125rem;
+  color: #475569;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Difficulty Buttons */
+.difficulty-buttons {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+
+.difficulty-button {
+  flex: 1;
+  padding: 0.625rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Focus States */
-.focus-outline:focus-visible {
-  outline: 2px solid #2196f3;
-  outline-offset: 2px;
+.difficulty-button.beginner {
+  background: #27ae60;
+  color: white;
 }
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .scenario-beginner {
-    background-color: #4CAF50;
+.difficulty-button.beginner:hover {
+  background: #219a52;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(39, 174, 96, 0.2);
+}
+
+.difficulty-button.advanced {
+  background: #e74c3c;
+  color: white;
+}
+
+.difficulty-button.advanced:hover {
+  background: #d44333;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(231, 76, 60, 0.2);
+}
+
+/* Start Button */
+.start-button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.start-button {
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.2);
+}
+
+.start-button:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.start-button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .practice-container {
+    padding: 1rem;
   }
 
-  .scenario-advance {
-    background-color: #f44336;
+  .scenarios-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
   }
 
-  .scenario-beginner:hover {
-    background-color: rgba(76, 175, 80, 0.3);
+  .scenario-card {
+    padding: 1.25rem;
   }
 
-  .scenario-advance:hover {
-    background-color: rgba(244, 67, 54, 0.3);
+  .category-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-button {
+    width: 100%;
+    justify-content: center;
   }
 }
